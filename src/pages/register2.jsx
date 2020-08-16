@@ -5,7 +5,7 @@ const ipfsClient = require('ipfs-http-client')
 function Example1() {
   // Declare a new state variable, which we'll call "count"
   const [count, setCount] = useState(0);
-  const [multiaddr] = React.createRef();
+  // const [multiaddr] = React.createRef();
   const added_file_hash = "https://ipfs.infura.io:5001/api/v0";
   const [ipfs, setIpfs] = useState(ipfsClient(added_file_hash));
   const [isOnline, setIsOnline] = useState(null);
