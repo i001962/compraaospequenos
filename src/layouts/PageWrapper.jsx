@@ -39,7 +39,7 @@ const PageWrapper = ({ children }) => {
       <CssBaseline />
       <Header siteTitle={ data.site.siteMetadata.title } />
       { children }
-      <Initiative />
+      {/* <Initiative /> */}
       <Footer />
     </ThemeProvider>
   );

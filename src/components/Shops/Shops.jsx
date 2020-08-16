@@ -28,8 +28,7 @@ const CONFIGURATION = {
     },
   }), {}),
   searchableFields: [
-    'nome',
-    'product',
+    'name'
   ],
 };
 
@@ -47,32 +46,33 @@ const Shops = () => {
   const [ query, setQuery ] = useState('');
 
   const data = useStaticQuery(graphql`
-    query {
-      allGoogleSpreadsheetNegocios {
-        edges {
-          node {
-            id
+  query {
+    allSealLakeEnvs {
+      edges {
+        node {
+        envelope {
+          owner
+          retrievalId
+          dataHash
+          envelopeId
+          name
+          metadata {
+            location
             name
             offer
-            product
-            facebook
-            instagram
-            whatsApp
-            email
-            telephone
-            site
-            location
-            businessType
-            offerType
+            storage {
+              url
+            }
           }
         }
-      }
+      }}
     }
+  }
   `);
 
   // Initialize the store objects, this should only happen once.
   useEffect(() => {
-    const flatData = data.allGoogleSpreadsheetNegocios.edges.map(({ node }) => node);
+    const flatData = data.allSealLakeEnvs.edges.map(({ node }) => node.envelope.metadata);
     const _store = itemsjs(flatData, CONFIGURATION);
 
     setIsLoading(false);

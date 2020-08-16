@@ -12,9 +12,9 @@ import {
 } from 'prop-types';
 
 import Checkbox from '@material-ui/core/Checkbox';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
@@ -86,18 +86,18 @@ const ShopsFilters = ({
     : FIELDS.filters[filter].label;
 
   return (
-    <ExpansionPanel
+    <Accordion
       className={ classes.panel }
       expanded={ !mb || expanded }
       onChange={ handleToggle }
     >
-      <ExpansionPanelSummary
+      <AccordionSummary
         expandIcon={ mb && <ExpandMoreIcon /> }
       >
         <span className={ classes.summary }>{ summary }</span>
-      </ExpansionPanelSummary>
+      </AccordionSummary>
 
-      <ExpansionPanelDetails className={ classes.items }>
+      <AccordionDetails className={ classes.items }>
         { sorted.map(bucket => (
           <div
             key={ `filter-option-${bucket.key}` }
@@ -115,8 +115,8 @@ const ShopsFilters = ({
             />
           </div>
         )) }
-      </ExpansionPanelDetails>
-    </ExpansionPanel>
+      </AccordionDetails>
+    </Accordion>
   );
 };
 

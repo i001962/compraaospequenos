@@ -17,19 +17,19 @@ const IndexPage = ({ location }) => {
 
   return (
     <PageWrapper>
-      <SEO title="Compra aos pequenos" location={ location } />
+      <SEO title="PublicProof" location={ location } />
       <Hero
         background="homeBg"
         callToAction={ {
-          label: 'Lista de Negócios',
-          to: '/shops/',
+          label: 'Search for Proofs',
+          to: '/seallake/',
         } }
         className={ classes.hero }
       />
       <About />
       <Register />
-      <SurvivalKit />
-      <MediaCoverage />
+   {/*    <SurvivalKit />
+      <MediaCoverage /> */}
     </PageWrapper>
   );
 };

@@ -18,33 +18,28 @@ const About = () => {
   return (
     <Section extraClasses={ classes }>
       <Typography variant="h4" marked="center" className={ classes.title } component="h2">
-        O que é esta iniciativa?
+        You may be wondering, what is a #PublicProof?
       </Typography>
 
       <div className={ classes.descriptionWrapper }>
         <Typography className={ classes.description } variant="body1">
-          A maior parte dos pequenos negócios, devido à situação actual, enfrentam enormes desafios
-          para sobreviver.
+        Manipulated information varies greatly, from harmless comedy to meticulously planned 
+        and strategically placed Fake News intended to steer public opinion or exploit consumers.
         </Typography>
 
         <Typography className={ classes.description } variant="body1">
-          Muitos destes negócios estão a reinventar-se e começaram a mudar a sua forma de funcionar
-          para se adaptarem às nossas necessidades.
-        </Typography>
-
-        <Typography className={ classes.description } variant="body1">
-          Porque a pequena economia de amanhã depende de nós hoje, nasceu o movimento
-          #compraaospequenos, como um apelo a todos.
+        Digital content has a new safeguard thanks to decentrialized public ledgers. Now
+        content can be made provable. 
         </Typography>
 
         <Grid container spacing={ 5 } className={ classes.itemsWrapper }>
           <Grid className={ classes.item } item xs={ 12 } md={ 6 }>
-            <ShopsIcon className={ classes.icon } />
+            <ClientsIcon className={ classes.icon } />
             <Typography variant="h5" className={ classes.sectionHeading }>
-              Pequenos negócios
+              Creators / Consumers
             </Typography>
             <Typography variant="body1" className={ classes.sectionDescription }>
-              com soluções adaptadas
+              Any size data
             </Typography>
           </Grid>
 
@@ -53,26 +48,25 @@ const About = () => {
           <Grid className={ classes.item } item xs={ 12 } md={ 6 }>
             <ClientsIcon className={ classes.icon } />
             <Typography variant="h5" className={ classes.sectionHeading }>
-              Clientes
+              Blockchains
             </Typography>
             <Typography variant="body1" className={ classes.sectionDescription }>
-              limitados ao isolamento
+              Any source of truth
             </Typography>
           </Grid>
         </Grid>
 
         <Typography className={ classes.description } variant="body1">
-          Como sabemos que, às vezes, o desafio é saber onde estão, o que oferecem e como apoiar,
-          criámos uma lista onde mapeamos os pequenos negócios que têm ofertas adaptadas à nossa
-          situação de isolamento.
+        Tamper evident data that is easy to verify and share 
+        could create a new standard for data integrity. 
         </Typography>
       </div>
 
       <Link
         className={ classes.button }
-        to="/shops/"
+        to="/seallake/"
       >
-        Lista de Negócios
+        Search for Proofs
       </Link>
     </Section>
   );

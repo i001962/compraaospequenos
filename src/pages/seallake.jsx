@@ -8,7 +8,7 @@ import PageWrapper from 'Layouts/PageWrapper';
 
 export default ({ location }) => (
   <PageWrapper>
-    <SEO title="Lista de Negócios" location={ location } />
+    <SEO title="List of Seals" location={ location } />
     <Hero background="shopsBg" />
     <Shops />
   </PageWrapper>

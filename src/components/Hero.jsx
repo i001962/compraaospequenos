@@ -23,7 +23,7 @@ const Hero = ({
 
   const data = useStaticQuery(graphql`
     query {
-      allGoogleSpreadsheetNegocios {
+      allSealLakeEnvs {
         edges {
           node {
             id
@@ -34,22 +34,22 @@ const Hero = ({
   `);
 
   useEffect(() => {
-    setTotalShops(data.allGoogleSpreadsheetNegocios.edges.length);
+    setTotalShops(data.allSealLakeEnvs.edges.length);
   }, [ data ]);
 
   return (
     <Section className={ className } extraClasses={ classes }>
       <div className={ classes.content }>
         <Typography color="inherit" variant="h2" className={ classes.title }>
-          #compraaospequenos
+          #PublicProof
         </Typography>
 
         <Typography color="inherit" variant="h5" className={ classes.subtitle }>
-          uma iniciativa
+          powered by Cryptowerk
         </Typography>
 
         <div>
-          <MenosLogo />
+         {/* <MenosLogo /> */}
         </div>
 
         { callToAction && (
@@ -65,7 +65,7 @@ const Hero = ({
       <div className={ classes.fold }>
         <div className={ classes.innerFold }>
           <span className={ classes.allShops }>
-            { `Todos os Negócios (${totalShops})` }
+            { `Number of entries (${totalShops})` }
           </span>
         </div>
       </div>

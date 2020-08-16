@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
-
+import Accordion from '@material-ui/core/Accordion';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -76,21 +76,21 @@ const ShopsCard = ({ shop }) => {
           <Typography gutterBottom variant="h5" component="h2" className={ classes.title } id={ `click-tracker__${shop.name}__name` } data-shop={ shop.name }>
             { shop.name }
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p" className={ classes.location } id={ `click-tracker__${shop.name}__location` } data-shop={ shop.name }>
-            { shop.location.join(', ') }
+          <Typography variant="body2" color="textSecondary" component="p" className={ classes.location } id={ `click-tracker__${shop.location}__location` } data-shop={ shop.location }>
+            { shop.location }
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p" className={ classes.businessType } id={ `click-tracker__${shop.name}__business-type` } data-shop={ shop.name }>
-            { shop.businessType.join(', ') }
+          <Typography variant="body2" color="textSecondary" component="p" className={ classes.type } id={ `click-tracker__${shop.offer}__business-type` } data-shop={ shop.offer }>
+            { shop.offer }
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p" className={ classes.product } id={ `click-tracker__${shop.name}__product` } data-shop={ shop.name }>
-            { shop.product }
+            { shop.name }
           </Typography>
         </CardContent>
 
         <CardActions
           id={ `click-tracker__${shop.name}__card-actions` }
           data-shop={ shop.name }
-          classes={ clsx({
+          className={ clsx({
             root: classes.cardActions,
           }) }
           disableSpacing
@@ -115,14 +115,14 @@ const ShopsCard = ({ shop }) => {
         timeout="auto"
       >
         <CardContent>
-          <Typography gutterBottom variant="h6" component="h5" color="textSecondary" className={ classes.offerType }>
-            { shop.offerType.join(', ') }
+          <Typography gutterBottom variant="h6" component="h5" color="textSecondary" className={ classes.offer }>
+            { shop.name }
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p" className={ classes.offer }>
-            { shop.offer }
+            { shop.name }
           </Typography>
 
-          <ShopsPhones phones={ shop.telephone } />
+          {/* <ShopsPhones phones={ shop.telephone } />
           <ShopsWhatsApp contact={ shop.whatsApp } />
           <ShopsEmail address={ shop.email } />
           <ShopsWebsite url={ shop.site } />
@@ -130,7 +130,7 @@ const ShopsCard = ({ shop }) => {
             name={ shop.name }
             facebook={ shop.facebook }
             instagram={ shop.instagram }
-          />
+          /> */}
         </CardContent>
       </Collapse>
     </Card>

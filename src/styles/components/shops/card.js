@@ -77,7 +77,7 @@ export default makeStyles(theme => ({
     letterSpacing: '2px',
   },
 
-  offerType: {
+  offer: {
     marginBottom: theme.spacing(1),
     fontSize: '16px',
     lineHeight: '22px',
@@ -94,7 +94,7 @@ export default makeStyles(theme => ({
     fontWeight: 'bold',
   },
 
-  businessType: {
+  name: {
     marginBottom: theme.spacing(1),
     fontSize: '16px',
     lineHeight: '22px',
@@ -111,13 +111,13 @@ export default makeStyles(theme => ({
     },
   },
 
-  offer: {
+/*   offer: {
     margintop: theme.spacing(1.5),
     marginBottom: theme.spacing(1.5),
     fontSize: '14px',
     lineHeight: '24px',
     letterSpacing: '2px',
-  },
+  }, */
 
   cardActions: {
     flex: '1 1 auto',

@@ -1,11 +1,8 @@
 import React from 'react';
 import { string } from 'prop-types';
 import clsx from 'clsx';
-
 import { Link } from 'gatsby';
-
 import Section from 'Layouts/Section';
-
 import useStyles from 'Styles/components/header';
 
 const Header = ({ siteTitle }) => {
@@ -23,15 +20,15 @@ const Header = ({ siteTitle }) => {
         { siteTitle }
       </Link>
       <nav className={ classes.navigation }>
-        <Link to="/" getProps={ isActiveLink }>
-          Início
+       {/*  <Link to="/" getProps={ isActiveLink }>
+          Home
+        </Link> */}
+        <Link to="/seallake/" getProps={ isActiveLink }>
+          Proof Repository
         </Link>
-        <Link to="/shops/" getProps={ isActiveLink }>
-          Lista
-        </Link>
-        <Link to="/articles/" getProps={ isActiveLink }>
-          Dicas e Ferramentas
-        </Link>
+        {/* <Link to="/articles/" getProps={ isActiveLink }>
+          Tips and Tools
+        </Link> */}
       </nav>
     </Section>
   );

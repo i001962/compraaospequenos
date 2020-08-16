@@ -13,7 +13,7 @@ const ShopsSearch = ({ onChange }) => {
         root: classes.root,
       } }
       label={ (
-        <span className={ classes.label }>Filtrar...</span>
+        <span className={ classes.label }>Filter...</span>
       ) }
       onChange={ onChange }
     />

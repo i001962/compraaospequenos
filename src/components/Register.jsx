@@ -16,25 +16,29 @@ const Register = () => {
     <Section extraClasses={ classes }>
       <div className={ classes.content }>
         <Typography variant="h4" marked="center" className={ classes.title }>
-          Como funciona?
+          Ok. Sounds good but how does this work?
         </Typography>
 
         <div className={ clsx(classes.description, 'ie-fix') }>
           <Typography variant="body1">
-            Qualquer pequeno negócio, ou um seu apoiante, pode submeter uma candidatura desde que
-            cumpra os dois requisitos seguintes:
+          The trustworthiness of information is assured thanks to two innovations 
           </Typography>
 
           <Typography component="span">
             <ol className={ classes.list }>
               <li>
-                Ser um micro ou pequeno negócio
+              Cryptography - Mathmatical methods create a unique digital finger print for any size data.
               </li>
               <li>
-                Ter uma oferta (produtos ou serviços) que, de alguma forma, se adapta à situação
-                actual
+              Blockchains - A network of independent computers calculate consensus and chain together immutable records.
+              </li>
+              <li>
+               Cryptowerk Seal - A shareable digital proof that is quickly created to link massive amounts of grainular data to any blockchain. 
               </li>
             </ol>
+          </Typography>
+          <Typography variant="body1">
+          Independent verification that data hasn't been manipulated becomes a reality.
           </Typography>
         </div>
 
@@ -43,11 +47,11 @@ const Register = () => {
           variant="contained"
           className={ classes.button }
           component="a"
-          href="https://menos.typeform.com/to/zCesK3"
+          href="/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Regista o teu Negócio
+          Try it with your data
         </Button>
       </div>
 
