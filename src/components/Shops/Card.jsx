@@ -120,7 +120,9 @@ const ShopsCard = ({ shop }) => {
           <Typography variant="body2" color="textSecondary" component="p" className={ classes.offer }>
             File on IPFS with Blockchain Proof
           </Typography>
-          <QRCode  value={shop.storage.url} fgColor="#006dcc" bgColor="#ffe1c4"	/>
+          <a href={shop.storage.url}>
+            <QRCode  value={shop.storage.url} fgColor="#006dcc" bgColor="#ffe1c4"	/>
+          </a>
           {/* <ShopsPhones phones={ shop.telephone } />
           <ShopsWhatsApp contact={ shop.whatsApp } />
           <ShopsEmail address={ shop.email } />
