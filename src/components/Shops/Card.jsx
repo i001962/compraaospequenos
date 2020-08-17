@@ -8,14 +8,13 @@ import CardContent from '@material-ui/core/CardContent';
 import Collapse from '@material-ui/core/Collapse';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Typography from '@material-ui/core/Typography';
-
 import ShopsEmail from 'Components/Shops/Email';
 import ShopsPhones from 'Components/Shops/Phones';
 import ShopsSocialLinks from 'Components/Shops/SocialLinks';
 import ShopsWebsite from 'Components/Shops/Website';
 import ShopsWhatsApp from 'Components/Shops/WhatsApp';
-
 import useStyles from 'Styles/components/shops/card';
+import { QRCode } from 'react-qrcode-logo';
 
 const ShopsCard = ({ shop }) => {
   const classes = useStyles();
@@ -119,9 +118,9 @@ const ShopsCard = ({ shop }) => {
             { shop.name }
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p" className={ classes.offer }>
-            { shop.name }
+            File on IPFS with Blockchain Proof
           </Typography>
-
+          <QRCode  value={shop.storage.url} fgColor="#006dcc" bgColor="#ffe1c4"	/>
           {/* <ShopsPhones phones={ shop.telephone } />
           <ShopsWhatsApp contact={ shop.whatsApp } />
           <ShopsEmail address={ shop.email } />

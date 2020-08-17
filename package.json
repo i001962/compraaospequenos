@@ -51,6 +51,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "react-qrcode-logo": "^2.2.1",
     "tiny-slider": "^2.9.2",
     "unorm": "^1.6.0"
   },

@@ -9,9 +9,7 @@ import Pagination from '@material-ui/lab/Pagination';
 import ShopsFilters from 'Components/Shops/Filters';
 import ShopsList from 'Components/Shops/List';
 import ShopsSearch from 'Components/Shops/Search';
-
 import Section from 'Layouts/Section';
-
 import useStyles from 'Styles/components/shops/shops';
 
 const FIELDS = require('Data/fields');

@@ -37,8 +37,8 @@ const Footer = () => {
         <SocialIcon
           extraClasses={ classes }
           icon="faGithub"
-          link="https://github.com/marzeelabs/compraaospequenos"
-          title="Marzee Labs Facebook Page"
+          link="https://github/i001962/compraaospequenos"
+          title="Github playground"
         />
       </div>
     </Section>
