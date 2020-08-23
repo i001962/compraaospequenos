@@ -51,6 +51,7 @@ const SEO = ({
       <html lang={ lang } />
       <link rel="canonical" href={ canonical } />
       <meta property="og:url" content={ canonical } />
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
       <title>{ title }</title>
       <meta property="og:title" content={ title } />
       <meta name="twitter:title" content={ title } />
