@@ -35,7 +35,7 @@ exports.sourceNodes = async ({
   };
   const sldirectory = configOptions.directory;
   console.log(sldirectory);
-  const apiUrl1 = `http://ec2-100-20-87-209.us-west-2.compute.amazonaws.com/API/v1/directory/`+sldirectory;
+  const apiUrl1 = `https://plato.seallake.net/API/v1/directory/`+sldirectory;
   const response = await fetch(apiUrl1, options1);
   const data1 = await response.json();
   // For each env get envelopes properties and envs
