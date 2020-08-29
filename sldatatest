@@ -1,0 +1,47 @@
+#!/bin/bash   
+SCRIPTDATAPATH=""       # TODO for now leave blank for same folder script and data files
+BASEURL="https://plato.seallake.net/API/v1" # no trailing slash /
+SLDIRECTORY="gatsby3"    # must already exist for evn creation
+
+pwd # will output current local directory path
+
+echo **Starting curl calls from here**
+# Find all files in $SCRIPTDATAPATH of CONTENTTYPE and POST to SL
+dirs=($(find ./public -type d))
+for dir in "${dirs[@]}"; do
+  cd "$dir"
+  #echo $PWD
+  echo $dir
+ 
+  for filename in $SCRIPTDATAPATH*; do
+    basename "$filename"
+    f="$(basename -- $filename)"
+    ct="$(file -b --mime-type $f)"
+    echo $ct
+   done
+done
+#directories="${find . -maxdepth 1 -type d}"
+#find . -maxdepth 1 -type d \( ! -name . \) -exec bash -c "cd '{}' && pwd" \;
+#echo directory
+
+     #curl -H $XAPIKEY \ ## couldnt get this to work
+     #curl -H 'x-api-key:24XIKg/xP/9SKL47l4qXN0owQBIJRAySdgK2kQUA3fQ= 29bVNO7oYF1Q6rJSSUGRmQu6pdVKh3iyDB+G6XHPbP0=' \
+     #   --form name=myfileparam \
+     #   --form file=@$f \
+     #   -Fjson='{"envelope":{"metadata":{"storage":{"contenttype":"'$CONTENTTYPE'"}}}}' \
+     #   $BASEURL/data/$SLDIRECTORY/$f
+   # Renaming file with _ for testing as workaround until versioning is in
+   # mv $filename $(basename $filename .$FILEEXTENTION)_.$FILEEXTENTION
+
+echo **All Done envelope calls**
+ 
+#echo **Create Directory**
+#curl -X POST http://ec2-100-20-87-209.us-west-2.compute.amazonaws.com/API/v1/directory/yodog1 \
+#curl -X POST $BASEURL/directory/$SLDIRECTORY \
+#-H 'Accept: application/json' \
+#-H 'x-api-key:24XIKg/xP/9SKL47l4qXN0owQBIJRAySdgK2kQUA3fQ= 29bVNO7oYF1Q6rJSSUGRmQu6pdVKh3iyDB+G6XHPbP0=' \
+#--data '{"directory": { "metadata": {"owner":"Kevin"}},"accessRestriction": {"rolePolicies": [{"name": "ANONYMOUS", "grant": ["list","read"]},{"name": "Admin", "grant": ["list","read","update","create"]}]}}'
+#fi
+#echo **All Done directory calls**
+echo **All Done**
+

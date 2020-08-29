@@ -66,7 +66,7 @@ class App extends React.Component {
           }
         }
     
-        const apiUrl1 = `http://ec2-100-20-87-209.us-west-2.compute.amazonaws.com/API/v1/envelope/gatsby1/` + added.path
+        // const apiUrl1 = `http://ec2-100-20-87-209.us-west-2.compute.amazonaws.com/API/v1/envelope/gatsby1/` + added.path
     
         // const response = await fetch(apiUrl1, body, options1);
     
@@ -133,11 +133,11 @@ class App extends React.Component {
         }
       }
   
-      const apiUrl1 = `http://ec2-100-20-87-209.us-west-2.compute.amazonaws.com/API/v1/envelope/gatsby1/` + added.path
+      // const apiUrl1 = `http://ec2-100-20-87-209.us-west-2.compute.amazonaws.com/API/v1/envelope/gatsby1/` + added.path
   
       // const response = await fetch(apiUrl1, body, options1);
   
-      fetch('http://ec2-100-20-87-209.us-west-2.compute.amazonaws.com/API/v1/envelope/gatsby1/' + added.path, {
+      fetch('https://plato.seallake.net/API/v1/envelope/gatsby1/' + added.path, {
           method: 'POST',
           body: JSON.stringify(body),
           headers: {
