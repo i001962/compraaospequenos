@@ -74,6 +74,7 @@ class App extends React.Component {
             method: 'POST',
             body: JSON.stringify(body),
             headers: {
+              'Accept': 'application/json',
               'x-api-key': 'gQtgHgwQUBcIUV9WndOZJov/7SUc9Eiz5MWBl8gr8/A= IFw9VKgiM+e7OXDBV/QVSjefr3OWO4rLXt7YgdA9qvg='
             },
           })
@@ -141,6 +142,7 @@ class App extends React.Component {
           method: 'POST',
           body: JSON.stringify(body),
           headers: {
+            'Accept': 'application/json',
             'x-api-key': 'gQtgHgwQUBcIUV9WndOZJov/7SUc9Eiz5MWBl8gr8/A= IFw9VKgiM+e7OXDBV/QVSjefr3OWO4rLXt7YgdA9qvg='
           },
         })
