@@ -70,7 +70,7 @@ class App extends React.Component {
     
         // const response = await fetch(apiUrl1, body, options1);
     
-        fetch('https://plato.seallake.net/API/v1/envelope/gatsby1/' + added.path, {
+        fetch('https://plato.seallake.net/API/v1/envelope/danger/' + added.path, {
             method: 'POST',
             body: JSON.stringify(body),
             headers: {
@@ -107,7 +107,7 @@ class App extends React.Component {
     try {
       const added = await this.state.ipfs.add(fileDetails, options)
       console.log(added)
-// Don't hate me for repeating this I'm just a lazy prototyper
+      // Don't hate me for repeating this I'm just a lazy prototyper
       // call seallake with ipfs hash TODO sha256 or send file into env
       const body = {
         "envelope": {
@@ -137,7 +137,7 @@ class App extends React.Component {
   
       // const response = await fetch(apiUrl1, body, options1);
   
-      fetch('https://plato.seallake.net/API/v1/envelope/gatsby1/' + added.path, {
+      fetch('https://plato.seallake.net/API/v1/envelope/danger/' + added.path, {
           method: 'POST',
           body: JSON.stringify(body),
           headers: {
