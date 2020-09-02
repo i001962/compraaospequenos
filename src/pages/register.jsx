@@ -42,14 +42,20 @@ class App extends React.Component {
       )
       console.log(added)
       // call seallake with ipfs hash TODO sha256 or send file into env
-        const body = {
-          "envelope": {
-            "dataHash": "11104af6a832bcd8a6855df5d0242c9a71e9da17faeb2d33b30c8903f1b5a944",
-            "metadata": {
-              "storage": {
-                "url": 'https://ipfs.io/ipfs/' + added.path,
-                "contenttype": "text/html"
-              },
+      let hashofIpfsCID = (require("crypto")
+      .createHash("sha256")
+      .update(added.path)
+      .digest("hex"));
+      console.log(hashofIpfsCID);
+      
+    const body = {
+      "envelope": {
+        "dataHash": hashofIpfsCID,
+        "metadata": {
+          "storage": {
+            "url": 'https://ipfs.io/ipfs/' + added.path,
+            "contenttype": "text/html"
+          },
               "location": "File Uploaded",
               "type": "File",
               "offer": "IPFS",
@@ -62,7 +68,6 @@ class App extends React.Component {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
-            'x-api-key': 'gQtgHgwQUBcIUV9WndOZJov/7SUc9Eiz5MWBl8gr8/A= IFw9VKgiM+e7OXDBV/QVSjefr3OWO4rLXt7YgdA9qvg='
           }
         }
     
@@ -70,12 +75,11 @@ class App extends React.Component {
     
         // const response = await fetch(apiUrl1, body, options1);
     
-        fetch('https://plato.seallake.net/API/v1/envelope/danger/' + added.path, {
+        fetch('https://plato.seallake.net/API/v1/envelope/ipfs/' + added.path, {
             method: 'POST',
             body: JSON.stringify(body),
             headers: {
-              'Accept': 'application/json',
-              'x-api-key': 'gQtgHgwQUBcIUV9WndOZJov/7SUc9Eiz5MWBl8gr8/A= IFw9VKgiM+e7OXDBV/QVSjefr3OWO4rLXt7YgdA9qvg='
+              'Accept': 'application/json'
             },
           })
           .then(res => res.json())
@@ -107,15 +111,21 @@ class App extends React.Component {
 
     try {
       const added = await this.state.ipfs.add(fileDetails, options)
-      console.log(added)
+      console.log(added.cid.string)
       // Don't hate me for repeating this I'm just a lazy prototyper
       // call seallake with ipfs hash TODO sha256 or send file into env
+      
+        let hashofIpfsCID = (require("crypto")
+        .createHash("sha256")
+        .update(added.cid.string)
+        .digest("hex"));
+        console.log(hashofIpfsCID);
       const body = {
         "envelope": {
-          "dataHash": "11104af6a832bcd8a6855df5d0242c9a71e9da17faeb2d33b30c8903f1b5a944",
+          "dataHash": hashofIpfsCID,
           "metadata": {
             "storage": {
-              "url": 'https://ipfs.io/ipfs/' + added.path,
+              "url": 'https://ipfs.io/ipfs/' + added.cid.string,
               "contenttype": "text/html"
             },
             "location": "File Uploaded",
@@ -129,21 +139,18 @@ class App extends React.Component {
       const options1 = {
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
-          'x-api-key': 'gQtgHgwQUBcIUV9WndOZJov/7SUc9Eiz5MWBl8gr8/A= IFw9VKgiM+e7OXDBV/QVSjefr3OWO4rLXt7YgdA9qvg='
+          'Accept': 'application/json'
         }
       }
   
       // const apiUrl1 = `http://ec2-100-20-87-209.us-west-2.compute.amazonaws.com/API/v1/envelope/gatsby1/` + added.path
   
       // const response = await fetch(apiUrl1, body, options1);
-  
-      fetch('https://plato.seallake.net/API/v1/envelope/danger/' + added.path, {
+      fetch('https://plato.seallake.net/API/v1/envelope/ipfs/' + added.cid.string, {
           method: 'POST',
           body: JSON.stringify(body),
           headers: {
-            'Accept': 'application/json',
-            'x-api-key': 'gQtgHgwQUBcIUV9WndOZJov/7SUc9Eiz5MWBl8gr8/A= IFw9VKgiM+e7OXDBV/QVSjefr3OWO4rLXt7YgdA9qvg='
+            'Accept': 'application/json'
           },
         })
         .then(res => res.json())
@@ -202,17 +209,19 @@ class App extends React.Component {
         id = 'keep-filename'
         name = 'keep-filename' / >
         keep filename < /label> </form >
-        <
-        div >
-        <
-        a id = "gateway-link"
-        target = '_blank'
-        href = {
+        <div >
+        <a id = "gateway-link" target = '_blank' href = {
           'https://ipfs.io/ipfs/' + this.state.added_file_hash
         } > {
           this.state.added_file_hash
-        } < /a>  < /
-        div > < /
+        } < /a>  </div > 
+        <div><h3>You will find blochchain proofs here.</h3> 
+        <p>They will update automatically once validated but ETH and BTC.</p></div>
+        <div ><a id = "gateway-link" target = '_blank'href = {`https://plato.seallake.net/API/v1/envelope/ipfs/${this.state.added_file_hash}`} > {
+          this.state.added_file_hash
+        } </a>  </div > 
+        
+        < /
         div >
       )
     }
