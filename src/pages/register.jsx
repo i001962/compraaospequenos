@@ -1,9 +1,10 @@
 const React = require('react')
 const ipfsClient = require('ipfs-http-client')
-const CID = require('cids')
+//const CID = require('cids')
 const Hero = require('Components/Hero')
 const PageWrapper = require('Layouts/PageWrapper')
 const fetch = require('node-fetch')
+var SHA256 = require("crypto-js/sha256");
 
 class App extends React.Component {
   constructor() {
@@ -42,10 +43,7 @@ class App extends React.Component {
       )
       console.log(added)
       // call seallake with ipfs hash TODO sha256 or send file into env
-      let hashofIpfsCID = (require("crypto")
-      .createHash("sha256")
-      .update(added.path)
-      .digest("hex"));
+      let hashofIpfsCID = SHA256(added.path);
       console.log(hashofIpfsCID);
       
     const body = {
@@ -115,11 +113,9 @@ class App extends React.Component {
       // Don't hate me for repeating this I'm just a lazy prototyper
       // call seallake with ipfs hash TODO sha256 or send file into env
       
-        let hashofIpfsCID = (require("crypto")
-        .createHash("sha256")
-        .update(added.cid.string)
-        .digest("hex"));
-        console.log(hashofIpfsCID);
+      let hashofIpfsCID = SHA256(added.path);
+      console.log(hashofIpfsCID);
+
       const body = {
         "envelope": {
           "dataHash": hashofIpfsCID,
@@ -185,12 +181,11 @@ class App extends React.Component {
       console.log('ipfs is active')
       return ( < div style = {
           {
-            color: "red"
+            color: "black"
           }
         } >
-        <
-        span className = "content" > Menu < /span> <
-        form id = 'capture-media'
+          <h1> Upload File to IPFS and Create Blockchain Proofs on ETH and BTC (testnets)</h1>
+          <form id = 'capture-media'
         onSubmit = {
           this.handleSubmit
         } >
@@ -208,7 +203,7 @@ class App extends React.Component {
         input type = 'checkbox'
         id = 'keep-filename'
         name = 'keep-filename' / >
-        keep filename < /label> </form >
+        keep filename in IPFS < /label> </form >
         <div >
         <a id = "gateway-link" target = '_blank' href = {
           'https://ipfs.io/ipfs/' + this.state.added_file_hash
@@ -216,7 +211,10 @@ class App extends React.Component {
           this.state.added_file_hash
         } < /a>  </div > 
         <div><h3>You will find blochchain proofs here.</h3> 
-        <p>They will update automatically once validated but ETH and BTC.</p></div>
+        <p>
+        <a id = "cw-link" target = '_blank' href = {
+          'https://cryptowerk.com'} >
+          Cryptowerk.com</a> will update automatically once validated but ETH and BTC.</p></div>
         <div ><a id = "gateway-link" target = '_blank'href = {`https://plato.seallake.net/API/v1/envelope/ipfs/${this.state.added_file_hash}`} > {
           this.state.added_file_hash
         } </a>  </div > 
@@ -226,7 +224,8 @@ class App extends React.Component {
       )
     }
 
-    return ( <
+    return ( 
+      <
       div style = {
         {
           textAlign: 'center'

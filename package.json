@@ -18,6 +18,7 @@
     "camelcase": "^6.0.0",
     "cids": "^1.0.0",
     "clsx": "^1.1.0",
+    "crypto-js": "^4.0.0",
     "dotenv": "^8.2.0",
     "find-and-replace": "^1.0.2",
     "gatsby": "^2.19.45",
