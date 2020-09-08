@@ -54,10 +54,10 @@ class App extends React.Component {
             "url": 'https://ipfs.io/ipfs/' + added.path,
             "contenttype": "text/html"
           },
-              "location": "File Uploaded",
-              "type": "File",
-              "offer": "IPFS",
-              "name": "Chrystler Building"
+              "location": "File Upload Demo",
+              "type": "demo data",
+              "protocol": "IPFS",
+              "name": "Random file for demo"
             }
           }
         }
