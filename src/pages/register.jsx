@@ -48,7 +48,7 @@ class App extends React.Component {
       
     const body = {
       "envelope": {
-        "dataHash": hashofIpfsCID,
+        "dataHash": hashofIpfsCID.toString(),
         "metadata": {
           "storage": {
             "url": 'https://ipfs.io/ipfs/' + added.path,
@@ -118,7 +118,7 @@ class App extends React.Component {
 
       const body = {
         "envelope": {
-          "dataHash": hashofIpfsCID,
+          "dataHash": hashofIpfsCID.toString(),
           "metadata": {
             "storage": {
               "url": 'https://ipfs.io/ipfs/' + added.cid.string,
